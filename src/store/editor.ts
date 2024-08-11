@@ -1,3 +1,15 @@
 import { defineStore } from 'pinia';
 
-export default defineStore('editor', {});
+type ActiveTool = 'media' | 'videos' | 'images' | 'audios' | 'text';
+
+type EditorState = {
+	activeTool: ActiveTool;
+};
+
+type EditorGetters = {};
+
+export default defineStore<string, EditorState, EditorGetters>('editor', {
+	state: () => ({
+		activeTool: 'media'
+	})
+});

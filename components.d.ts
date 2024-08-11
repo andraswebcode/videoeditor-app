@@ -17,5 +17,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     TimeLine: typeof import('./src/components/editor/TimeLine.vue')['default']
     ToolBar: typeof import('./src/components/editor/ToolBar.vue')['default']
+    UserMenu: typeof import('./src/components/common/UserMenu.vue')['default']
   }
 }

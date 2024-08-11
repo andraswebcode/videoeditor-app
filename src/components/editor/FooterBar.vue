@@ -1,7 +1,5 @@
 <script setup></script>
 
-<template>
-	<VFooter></VFooter>
-</template>
+<template></template>
 
 <style scoped></style>

@@ -1,12 +1,24 @@
 <script setup>
-import { useTheme } from 'vuetify';
+import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
+import { ref } from 'vue';
 
-const t = useTheme();
-console.log(t);
+const show = ref(true);
+const onClick = () => {
+	show.value = !show.value;
+};
 </script>
 
 <template>
-	<VNavigationDrawer></VNavigationDrawer>
+	<VNavigationDrawer location="end" v-model="show">
+		<template v-slot:append>
+			<SideBarToggler @click="onClick" :icon="show ? mdiChevronRight : mdiChevronLeft" />
+		</template>
+	</VNavigationDrawer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.sidebar-toggler {
+	top: calc(50% - 14px);
+	left: -29px;
+}
+</style>
